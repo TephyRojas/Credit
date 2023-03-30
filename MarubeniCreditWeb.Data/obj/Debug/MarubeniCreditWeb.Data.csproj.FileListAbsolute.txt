@@ -1,0 +1,72 @@
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll.config
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.pdb
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CoreCompileInputs.cache
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CopyComplete
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.dll
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.pdb
+C:\Users\evelyn.alvarez\source\repos\MACRE - MARUBENI CREDITS\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.AssemblyReference.cache
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll.config
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.pdb
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.AssemblyReference.cache
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CoreCompileInputs.cache
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CopyComplete
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.pdb
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll.config
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\MarubeniCreditWeb.Data.pdb
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.AspNetCore.Http.Features.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\Microsoft.Extensions.Primitives.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Buffers.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.IO.Pipelines.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Memory.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Numerics.Vectors.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CoreCompileInputs.cache
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.CopyComplete
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.dll
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.pdb
+C:\Proyectos\MACRE-MARUBENICREDITCL_modificacionessitio\MACRE-MARUBENICREDITCL\MarubeniCreditWeb.Data\obj\Debug\MarubeniCreditWeb.Data.csproj.AssemblyReference.cache

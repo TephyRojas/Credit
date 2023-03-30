@@ -1,0 +1,137 @@
+﻿@model MarubeniCreditWeb.Models.TipoCreditoModel
+@{
+    ViewBag.Title = "TipoCreditoAuto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body id="tipos-de-creditos">
+    <!-- MAIN -->
+    <main class="container-fluid p-0">
+        <!-- HERO -->
+        <section class="p-md-0 mt-0 mb-4">
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap align-items-stretch mt-4 rounded py-0 px-md-4">
+                        <div class="col-md-6 col-12 order-md-1 order-2">
+                            <div class="content bg-card h-100 d-flex flex-column justify-content-center align-items-center  py-4">
+                                <div class=" p-0">
+                                    <h1 class="font-30
+											mb-4 fw-bold pe-4 mt-md-0 mt-4 text-md-start text-center px-5">
+                                        @Model.encabezado.titulo
+                                    </h1>
+                                    <p class="fs-3 text-md-start text-center px-5">
+                                        @Model.encabezado.texto
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 order-md-2 order-1">
+                            <div class="img-hero-container">
+                                <img class="img-fluid border-top-right border-bottom-right"
+                                     src="~/img/imgs/@Model.encabezado.imagen"
+                                     alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Financiamiento -->
+        <section class="p-md-0 mt-0">
+            <div class="container-fluid">
+                <div class="main-content p-md-5 p-0 d-flex justify-content-center px-md-5 px-2">
+                    <div class="col-md-8 col-sm-10 col-12">
+                        <div class="p-0 d-flex flex-column align-items-center">
+                            <h2 class="text-gray my-3 py-md-5 py-2"> @Model.textoDestacado.titulo</h2>
+                            <p class="mb-0 text-center only-desktop">
+
+                                @foreach (var texto in Model.textoDestacado.lstTexto)
+                                {
+                                <p class="mb-0 text-center only-desktop">
+                                    <strong>@texto.titulo</strong> @texto.texto
+                                </p>
+                                <br />
+                            }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Cards-Creditos -->
+            <section class="p-md-0">
+                <div class="container-fluid">
+                    <div class="row justify-content-center px-4">
+                        @foreach (var financ in Model.lstFinanciamiento)
+                        {
+                            <!-- Card -->
+                            <div class="col-lg-6 col-sm-10 col-12 px-md-4 px-0 my-4">
+                                <div class="credit-card finance-card card-size-inmovil p-md-5 p-sm-4 p-1">
+                                    <div class="d-flex align-items-start justify-content-between p-sm-4">
+                                        <div class="content ps-4 py-2">
+                                            <p class="fs-1 text-red fw-bolder text-start">@financ.titulo</p>
+                                            <p class="fs-2 text-start">
+                                                @financ.texto
+                                            </p>
+                                        </div>
+                                        <div class="img-container pe-4 ps-2 py-2">
+                                            <img class="border-rad-50 img-credit-card"
+                                                 src="~/img/imgs/@financ.imagen"
+                                                 alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <button data-bs-toggle="modal"
+                                                data-bs-target="@financ.url"
+                                                type="button"
+                                                class="btn btn-outline-danger standard-btn card-btn border-red hover-red text-uppercase fs-2 col-sm-8 col-11">
+                                            conoce más
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- Cards-Micro-Creditos -->
+            <section class="p-md-0 mt-5">
+                <div class="container-fluid">
+                    <div class="row justify-content-center px-4">
+                        @foreach (var otfin in Model.lstOtroFinanciamiento)
+                        {
+                            <!-- Card -->
+                            <div class="col-xl-3 col-sm-10 col-12 px-md-4 px-0 my-4">
+                                <div class="credit-card finance-card card-size-inmovil p-md-5 p-sm-4 p-1">
+                                    <div class="d-flex align-items-start justify-content-between">
+                                        <div class="content ps-4 py-2">
+                                            <p class="fs-1 text-red fw-bolder text-start">@otfin.titulo</p>
+                                            <p class="fs-2 text-start">
+                                                @otfin.texto
+                                            </p>
+                                        </div>
+                                        <div class="img-container p-3 only-mobile-sm">
+                                            <img class="border-rad-50 img-credit-card"
+                                                 src="~/img/imgs/@otfin.imagen"
+                                                 alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <button data-bs-toggle="modal"
+                                                data-bs-target="@otfin.url"
+                                                type="button"
+                                                class="btn btn-outline-danger standard-btn border-red hover-red text-uppercase fs-4 text-center col-md-10 col-sm-8 col-11">
+                                            conoce más
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+    </body>

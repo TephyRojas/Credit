@@ -1,0 +1,68 @@
+﻿@model MarubeniCreditWeb.Models.FooterModel
+@using MarubeniCreditWeb.Data.Package.Comun;
+<footer>
+    <div class="footer-container d-flex flex-wrap p-md-5 p-2">
+        <div class="col-md-4 col-12">
+            <div class="img-container d-flex">
+                <img src="~/img/imgs/@Model.logo.imagen" alt="" />
+            </div>
+        </div>
+        <div class="col-md-8 col-12 h-auto">
+            <div class="d-flex flex-wrap justify-content-md-center">
+                <div class="col-sm-3 col-12 menu px-md-1 py-md-1 py-4 px-0 ps-4 mb-md-0 mb-3 order-md-1 order-2">
+                    <h4 class="fw-bold text-red pb-3 text-md-start">
+                        @Model.lstSucursales.FirstOrDefault().titulo
+                    </h4>
+                    @foreach (var suc in Model.lstSucursales)
+                    {
+                        <p href=""
+                           class="text-decoration-none text-dark fs-5 mb-0 text-md-start py-2 px-0">
+                            <img class="mx-2 pin-icon" src="~/img/icons/pin.svg" alt="" /> @suc.subtitulo
+                        </p>
+                    }
+
+                </div>
+                <div class="col-sm-4 col-12 contact px-md-3 px-4 order-md-2 order-1 d-flex flex-column align-items-center">
+                    <h5 class="fw-bold pb-3 text-dark-gray text-md-start">@Model.contacto.titulo</h5>
+                    <button class="btn btn-outline-danger standard-btn border-red hover-red text-uppercase fs-3" onclick="@Model.contacto.url">
+                        <span class="text-uppercase mobile-btn fs-4">@Model.contacto.titulo</span>
+                        <span class="text-uppercase fs-4 mx-2">@Model.contacto.subtitulo</span>
+                    </button>
+                </div>
+                <div class="col-sm-3 col-12 menu px-md-3 px-4 py-md-1 py-4 order-md-3 order-3">
+                    <h4 class="fw-bold text-red pb-3 text-md-start">@Model.lstMenu.FirstOrDefault().titulo</h4>
+                    @foreach (var menu in Model.lstMenu)
+                    {
+                        if (menu.idTipoUrl == (int)Objeto.TipoUrl.urlVista)
+                        {
+                            <a class="fs-5 text-light-gray" href="@Url.Action(menu.urlAction, menu.urlController)">@menu.subtitulo</a>
+                        }
+                        if (menu.idTipoUrl == (int)Objeto.TipoUrl.urlVistaHashtag)
+                        {
+                            <a class="fs-5 text-light-gray" href="@Url.Action(menu.urlAction, menu.urlController)#tipos-de-creditos">@menu.subtitulo</a>
+                        }
+                        if (menu.idTipoUrl == (int)Objeto.TipoUrl.url)
+                        {
+                            <a class="fs-5 text-light-gray" href="@menu.url" target="_blank">@menu.subtitulo</a>
+                        }
+
+                    }
+
+                </div>
+            </div>
+            <div class="d-flex justify-content-md-center mt-md-5 mt-3">
+                <div class="col-sm-8 col-12 d-flex justify-content-md-end ">
+                    <div class="col-sm-3 col-6">
+                        <ul class="px-md-3 px-4">
+                            @foreach (var menu in Model.lstMenu.Where(c => c.idTipoUrl == (int)Objeto.TipoUrl.urlVistaTerm))
+                            {
+                                <li class="footer-list"><p class="mb-0" onclick="location.href='@Url.Action(menu.urlAction, menu.urlController)'")">@menu.subtitulo</p></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>

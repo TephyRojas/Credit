@@ -1,0 +1,400 @@
+﻿@model MarubeniCreditWeb.Models.FormCertificadoModel
+@using MarubeniCreditWeb.Data.Package.Comun;
+
+<div id="modCertPaso1">
+
+    <div class="modal-header no-align border-0">
+        <!-- Progress Bar -->
+        <div class="progress-container p-2 col-11">
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     style="width: 25%"
+                     aria-valuenow="25"
+                     aria-valuemin="0"
+                     aria-valuemax="100"></div>
+            </div>
+            <p class="card-subtitle py-3">Paso 1 de 3</p>
+        </div>
+        <div class="button-container col-1 py-2 px-4">
+            <button type="button"
+                    class="btn-close p-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="modal-body pt-0 px-4">
+        <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+            Solicitar Certificados
+        </h3>
+        <p class="card-subtitle fs-5 fw-bold py-3">
+            Selecciona el tipo de certificado
+        </p>
+        <!-- Form -->
+        <div class="row">
+            @foreach (var item in Model.lstCertificado)
+            {
+                <div class="col-md-12 my-2">
+                    <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                        <p class="mb-0 fs-5">@item.certificado</p>
+                        <input type="radio" name="rdbCertificado" id="certificado_@item.orden" value="@item.certificado" onclick="ValidarCertificado()" />
+                    </label>
+                </div>
+            }
+
+        </div>
+    </div>
+    <div class="modal-footer border-0 p-4">
+        <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+            <div class="col-sm-6 col-12">
+                <button type="button"
+                        disabled="disabled"
+                        id="btnModFormCertificado1"
+                        onclick="ModCertPaso2()"
+                        @*data-bs-target="#certificados2"
+                        data-bs-toggle="modal"*@
+                        class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                    Avanzar
+                    <img class="mx-3" src="~/img/icons/white-arrow.png" alt="" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="modCertPaso2" class="visually-hidden">
+
+    <div class="modal-header no-align border-0">
+        <!-- Progress Bar -->
+        <div class="progress-container p-2 col-11">
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     style="width: 50%"
+                     aria-valuenow="50"
+                     aria-valuemin="0"
+                     aria-valuemax="100"></div>
+            </div>
+            <p class="card-subtitle py-3">Paso 2 de 3</p>
+        </div>
+        <div class="button-container col-1 py-2 px-4">
+            <button type="button"
+                    class="btn-close p-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+
+    <form id="formCertificado">
+        <div class="modal-body pt-0 px-4">
+            <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                Solicitar Certificado Prepago
+            </h3>
+            <p class="card-subtitle fs-5 fw-bold py-3">
+                A continuación completa tus datos:
+            </p>
+            <!-- Form -->
+            <div class="row">
+                <div class="col-md-12 my-2">
+                    <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                        <p class="mb-0 fs-5" id="lblCertificado"></p>
+                        <input type="radio" name="rdbCertificado" id="" value="" disabled="disabled" />
+                    </label>
+                </div>
+            </div>
+            <div class="row align-items-center my-3">
+                <div class="col-md-6 col-12">
+                    <p class="fs-5 mb-0">
+                        Para continuar la solicitud descarga el formulario, complétalo y
+                        adjúntalo más abajo
+                    </p>
+                </div>
+                <div class="col-md-6 col-12">
+                    <div class="d-flex justify-content-center align-items-center">
+                        <img src="~/img/icons/red-down-button.svg" alt="" />
+                        <a href="@Url.Action("DownloadFile", "ServicioCliente", new { codFile = (int)Objeto.Archivos.Formulario_Servicio_al_Cliente })" class="text-uppercase fs-5 text-red mx-2 fw-bold">descargar formulario</a>
+                    </div>
+                </div>
+                <!-- Adjuntar -->
+                <div class="col-12 my-2">
+                    <div class="col-12 d-flex position-relative">
+                        <div class="col-8 pe-3">
+                            <input id="file1CertName"
+                                   type="text"
+                                   class="form-control w-100 border-0 input-text border-rad-10 p-3"
+                                   autocomplete="off"
+                                   placeholder="formulario solicitud certificado.pdf" />
+                        </div>
+                        <div class="col-4">
+                            <button id="btnFile1Cert" class="btn-grey text-white w-100 d-block border-0 p-2 border-rad-10">
+
+                                <span class="only-desktop">Adjuntar archivo</span>
+                                <img src="~/img/icons/clip.png">
+                            </button>
+                        </div>
+                        <input class="file" type="file" name="file1Cert" id="file1Cert" accept="image/jpeg, image/png, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="modal-footer border-0 p-4">
+        <div class="w-100 d-flex">
+            <div class="col-sm-6 col-12 px-2">
+                <button type="button"
+                        @*disabled="disabled"*@
+                        id="btnModVolverCertificado2"
+                        onclick="ModCertPaso1()"
+                        class="w-100 btn btn-outline-danger standard-btn border-red hover-red inverse text-uppercase adjust-btn">
+                    <img class="mx-2" src="~/img/icons/left-arrow.png" alt="" />
+                    volver
+                </button>
+            </div>
+            <div class="col-sm-6 col-12 px-2">
+                <button type="button"
+                        disabled="disabled"
+                        id="btnModFormCertificado2"
+                        onclick="ModCertPaso3()"
+                        @*data-bs-toggle="modal"
+                    data-bs-target="#certificados4"*@
+                        class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                    avanzar
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="modCertPaso3" class="visually-hidden">
+
+    <div class="modal-header no-align border-0">
+        <!-- Progress Bar -->
+        <div class="progress-container p-2 col-11">
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     style="width: 100%"
+                     aria-valuenow="50"
+                     aria-valuemin="0"
+                     aria-valuemax="100"></div>
+            </div>
+            <p class="card-subtitle py-3">Paso 3 de 3</p>
+        </div>
+        <div class="button-container col-1 py-2 px-4">
+            <button type="button"
+                    class="btn-close p-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+    <form name="formCertificado1" id="formCertificado1" enctype="multipart/form-data">
+        <div class="modal-body pt-0 px-4">
+            <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                Solicitar Certificados
+            </h3>
+            <p class="card-subtitle fs-5 fw-bold py-3">
+                A continuación completa tus datos:
+            </p>
+            <!-- Form -->
+            <div class="row">
+                <!-- Personal Data -->
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="nombreCert" class="form-label mb-0 px-3">Nombre*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics"
+                               id="nombreCert"
+                               name="nombreCert"
+                               autocomplete="off"
+                               maxlength="40"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="apellidoCert" class="form-label mb-0 px-3">Apellido*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics"
+                               id="apellidoCert"
+                               name="apellidoCert"
+                               autocomplete="off"
+                               maxlength="40"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="rutCert" class="form-label mb-0 px-3">RUT*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 rut"
+                               id="rutCert"
+                               name="rutCert"
+                               onblur="ValidaRut()"
+                               autocomplete="off"
+                               maxlength="12"
+                               placeholder="12.345.678-9" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="emailCert" class="form-label mb-0 px-3">E-mail*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                               id="emailCert"
+                               name="emailCert"
+                               autocomplete="off"
+                               maxlength="60"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <!-- Selects Button -->
+                <div class="col-md-6 col-12 my-2">
+                    <p class="mb-0 px-3">Región*</p>
+                    <label class="input-tab align-items-center justify-content-between w-100">
+                        <select class="form-select border-0 p-3 input-select border-rad-10"
+                                aria-label="Default select example" id="regionCert" name="regionCert">
+                            <option selected value="0">Selecciona tu región</option>
+                            @foreach (var reg in Model.lstRegion)
+                            {
+                                <option value="@reg.idRegion">@reg.region</option>
+
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <p class="mb-0 px-3">Comuna*</p>
+                    <label class="input-tab align-items-center justify-content-between w-100">
+                        @if (ViewBag.lstComuna == null)
+                        {
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example" id="comunaCert" name="comunaCert">
+                                <option selected value="0">Selecciona tu Comuna</option>
+                                @*@foreach (var com in Model.lstComuna)
+                {
+                    <option value="@com.comuna">@com.comuna</option>
+
+                }*@
+                            </select>
+                        }
+                        else
+                        {
+                            @Html.DropDownList("comunaCert", (SelectList)ViewBag.lstComuna, htmlAttributes: new { @class = "form-select border-0 p-3 input-select border-rad-10" });
+                        }
+                    </label>
+                </div>
+                <!-- Address -->
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="direccionCert" class="form-label mb-0 px-3">Dirección*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics-number"
+                               id="direccionCert"
+                               name="direccionCert"
+                               autocomplete="off"
+                               maxlength="100"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="telMovilCert" class="form-label mb-0 px-3">Teléfono Móvil*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3  border-rad-10 input-number phone"
+                               id="telMovilCert"
+                               name="telMovilCert"
+                               autocomplete="off"
+                               maxlength="17"
+                               placeholder="(+56) 9 9999-9999" />
+                    </div>
+                </div>
+                <!-- Adjuntar -->
+                <div class="col-12 my-2">
+                    <div class="col-12 d-flex position-relative">
+                        <div class="col-8 pe-3">
+                            <input id="file2CertName"
+                                   type="text"
+                                   class="form-control w-100 border-0 input-text border-rad-10 p-3"
+                                   autocomplete="off"
+                                   placeholder="cedula.jpg" />
+                        </div>
+                        <div class="col-4">
+                            <button id="btnFile2Cert" class="btn-grey text-white w-100 d-block border-0 p-2 border-rad-10">
+
+                                <span class="only-desktop">Adjuntar archivo</span>
+                                <img src="~/img/icons/clip.png">
+                            </button>
+                        </div>
+                        <input class="file" type="file" name="file2Cert" id="file2Cert" accept="image/jpeg, image/png, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                    </div>
+                </div>
+                <!-- Operaciones -->
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Número de operacion*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                               id="operacionCert"
+                               name="operacionCert"
+                               autocomplete="off"
+                               maxlength="30"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Patenete asociada*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                               id="patenteCert"
+                               name="patenteCert"
+                               autocomplete="off"
+                               maxlength="30"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <!-- Mensaje -->
+                <div class="col-12 my-2">
+                    <label for="exampleFormControlTextarea1" class="form-label px-3">Mensaje</label>
+                    <textarea class="form-control border-rad-10 border-0 "
+                              id="mensajeCert"
+                              name="mensajeCert"
+                              autocomplete="off"
+                              maxlength="500"
+                              rows="3"></textarea>
+                </div>
+                <input type="hidden" id="certificadoCert" name="certificadoCert" value="" />
+            </div>
+        </div>
+        <br />
+        <div align="right" id="g-recaptcha-Cert" class="g-recaptcha" data-callback="recaptchaCertCallback" data-sitekey=@ViewBag.Key></div>
+        <br />
+        @Html.AntiForgeryToken()
+    </form>
+    <div class="modal-footer border-0 p-4">
+        <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+            
+            <div class="col-sm-5 col-12">
+                <button type="button"
+                        disabled="disabled"
+                        id="btnModFormCertificado3"
+                        onclick="GuardarCertificado()"
+                        @*data-bs-toggle="modal"
+                    data-bs-target="#graciasModal"*@
+                        class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn btn-envio">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="/Scripts/page/servicioCliente.js"></script>
+<script type="text/javascript" src="~/Scripts/page/comun.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

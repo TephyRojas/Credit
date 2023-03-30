@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/Views/Shared/_NavBar.cshtml" hash="11eabf25" filehash="80efc4140e2" flags="110000" assembly="App_Web__navbar.cshtml.639c3968" type="ASP._Page_Views_Shared__NavBar_cshtml">
+    <filedeps>
+        <filedep name="/Views/Shared/_NavBar.cshtml" />
+    </filedeps>
+</preserve>

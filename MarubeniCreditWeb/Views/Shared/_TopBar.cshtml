@@ -1,0 +1,25 @@
+﻿@model List<MarubeniCreditWeb.Data.Package.MenuPkg.Menu>
+@using MarubeniCreditWeb.Data.Package.Comun;
+
+<div class="micro-header bg-dark-grey px-5 py-3 d-flex justify-content-end">
+
+    @foreach (var menu in Model)
+    {
+        <div class="d-flex px-2 fs-5">
+            <img class="mx-2" src="~/img/icons/@menu.imagen" alt="" srcset="">
+            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.modal)
+            {
+                <p role="button" onclick="MostrarFormActDatos()" class="mb-0 text-light-gray">@menu.titulo</p>
+            }
+            else if (menu.idTipoUrl == (int)Objeto.TipoUrl.urlVista)
+            {
+                <p role="button" onclick="location.href='@Url.Action(menu.urlAction, menu.urlController)'" class="mb-0 text-light-gray">@menu.titulo</p>
+            }
+        </div>
+    }
+</div>
+
+<!--<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>-->
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+<!--<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>-->
+@*<script type="text/javascript" src="~/Scripts/page/servicioCliente.js"></script>*@

@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/font-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/theme-vendors.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/style.css" />
+    <link rel="stylesheet" href="~/Content/variables.css" />
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Content/main.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/responsive.css" />
+
+    <link rel="icon" href="~/img/imgs/logo_web.png" type="image/x-icon" />
+    <title>MARUBENI CREDIT</title>
+
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header" class=" border-bottom">
+
+        @*@Html.Partial("_TopBar")*@
+        @Html.Action("TopBar", "Menu")
+
+        @*     @Html.Partial("_NavBar")*@
+        @Html.Action("NavBar", "Menu")
+
+    </header>
+
+    <!-- Modal-Formularios 1-->
+    <div id="formulario"
+         class="modal fade" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="Modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-5 bg-card border-rad-20">
+
+                <div id="contenedorForm">
+
+                </div>
+                <div class="modal-footer border-0 p-4"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    @Html.Partial("_ModalsTipoCredito")
+    @Html.Partial("_ModalsTerminos")
+    @Html.Partial("_ModalAcTDatos")
+    <div>
+        @RenderBody()
+
+        <!-- FOOTER -->
+        @*@Html.Partial("_Footer")*@
+        @Html.Action("Footer", "Menu")
+
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")*@
+
+
+    <script type="text/javascript">
+        var BASE_PATH = '@Url.Content("~/")';
+    </script>
+
+
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootsnav.js"></script>
+    <script src="~/Scripts/jquery.nav.js"></script>
+    <script src="~/Scripts/hamburger-menu.js"></script>
+    <script src="~/Scripts/theme-vendors.min.js"></script>
+    <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+    <script src="~/Scripts/jquery.rut.js"></script>
+    <script src="~/Scripts/page/servicioCliente.js"></script>
+    <script src="~/Scripts/page/home.js"></script>
+    <script src="~/Scripts/page/comun.js"></script>
+
+
+    <!-- setting -->
+    <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/naitus.js"></script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

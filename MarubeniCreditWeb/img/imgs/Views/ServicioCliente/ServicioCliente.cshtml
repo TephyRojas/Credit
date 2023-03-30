@@ -1,0 +1,199 @@
+﻿@model MarubeniCreditWeb.Models.ServicioClienteModel
+@using MarubeniCreditWeb.Data.Package.Comun;
+@{
+
+    ViewBag.Title = "ServicioCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body id="servicio-cliente">
+    <main class="container-fluid p-0">
+        <!-- Servicio al Cliente -->
+        <section class="">
+            <div class="row m-0 p-md-5 p-2">
+                <div class="col-12">
+                    <div class="bg-card d-flex flex-wrap align-items-stretch mt-4 rounded py-lg-5 py-md-3 py-1">
+                        <!-- Card -->
+                        <div class="col-xl-3 col-md-6 col-12 p-md-4 p-2">
+                            <div class=" micro-card d-flex flex-column align-items-start py-md-5 py-2 px-4">
+                                <h1 class="fw-bold">Servicio al Cliente</h1>
+                                <p class="fs-2 w-sm-75 w-100 py-3">
+                                    ¿Cómo podemos ayudarte? Contáctanos para cualquier duda o consulta
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="col-xl-3 col-md-6 col-12 p-md-4 p-2">
+                            <div class="micro-card finance-card numbers h-100 ">
+                                <p class="fs-5 text-uppercase mb-0">Teléfono Mesa Central</p>
+                                <p class="fs-1 text-red fw-bold">+56 2 2680 3300</p>
+                                <p class="fs-5 text-uppercase mb-0">Teléfono Cobranzas</p>
+                                <p class="fs-1 text-red fw-bold">+56 2 2680 3370</p>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="col-xl-3 col-sm-6 col-12 p-md-4 p-2 my-2">
+                            <div class="micro-card finance-card  h-100 p-md-5 p-2">
+                                <p class="font-30 fw-bold text-center mb-3">Formulario de Contacto</p>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <!-- Button-Modal -->
+                                    <button type="button"
+                                            id="btnFormContacto"
+                                            onclick="MostrarFormContacto1()"
+                                            @*data-bs-toggle="modal"
+                                        data-bs-target="#formularios"*@
+                                            class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block">
+                                        Completar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card -->
+                        <div class="col-xl-3 col-sm-6 col-12 p-md-4 p-2 my-2">
+                            <div class="micro-card finance-card p-md-5 p-2 h-100">
+                                <p class="font-30 fw-bold text-center mb-3">
+                                    Solicitud de Certificados
+                                </p>
+                                <div class="col-12 d-flex justify-content-center">
+                                    <!-- Button-Modal -->
+                                    <button type="submit"
+                                            id="btnFormCertificado"
+                                            onclick="MostrarFormCertificado1()"
+                                            @*data-bs-toggle="modal"
+                                        data-bs-target="#certificados"*@
+                                            class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block">
+                                        Completar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas mas frecuentes -->
+        <section>
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-sm-4 col-12">
+                    <div class="content p-3 my-md-0 my-4">
+                        <h2 class="fs-1 fw-bold">Preguntas más frecuentes</h2>
+                        <p class="fs-2 py-3">
+                            Aquí te dejamos un listado de las preguntas más frecuentes que hacen
+                            nuestros clientes
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-12 d-flex justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <div class="accordion" id="accordionExample">
+                            <!-- Item#1 -->
+                            @foreach (var preg in Model.lstPregutaFrecuente)
+                            {
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading_@preg.orden">
+                                        <button class="accordion-button collapsed fs-5 text-gray"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse_@preg.orden"
+                                                aria-expanded="false"
+                                                aria-controls="collapse_@preg.orden">
+                                            @preg.pregunta
+                                        </button>
+                                    </h2>
+                                    <div id="collapse_@preg.orden"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="heading_@preg.orden"
+                                         data-bs-parent="#accordionExample">
+                                        <div id="collapse_@preg.orden"
+                                             class="accordion-collapse collapse"
+                                             aria-labelledby="heading_@preg.orden"
+                                             data-bs-parent="#accordionExample">
+                                            <div class="accordion-body ">
+                                                @if (preg.idTipoUrl != 0)
+                                                {
+                                                    <div class="row respuesta1">
+                                                        <p class="mb-0 text-gray fs-5 ">
+                                                            @preg.respuesta
+
+
+                                                            @if (preg.idTipoUrl == (int)Objeto.TipoUrl.modal)
+                                                            {
+                                                                <a onclick="@preg.url" class="text-red">@preg.urlTexto</a>
+                                                            }
+                                                            else
+                                                            {
+                                                                <a onclick="location.href='@Url.Action(preg.urlAction, preg.urlController)'" class="text-red">@preg.urlTexto</a>
+                                                            }
+                                                        </p>
+                                                    </div>
+
+                                                    if (preg.respuesta2 != null)
+                                                    {
+                                                        <div class="row respuesta2">
+                                                            <p class="mb-0 text-gray fs-5 text-white-space">
+                                                                @preg.respuesta2
+
+                                                            </p>
+                                                        </div>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <p class="mb-0 text-gray fs-5 text-white-space">
+                                                        @preg.respuesta
+                                                    </p>
+                                                }
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otros-Documentos -->
+        <section>
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-12">
+                    <h2 class="fs-1 text-gray text-center mb-3">
+                        Otros documentos que pueden ser de ayuda
+                    </h2>
+                    <div class="row m-0 p-0">
+                        @foreach (var docs in Model.lstOtrosDocs)
+                        {
+                            <div class="col-md-4 col-sm-6 col-12 px-md-5 px-2 my-3">
+                                <div class="d-flex justify-content-center">
+                                    <button type="button" onclick="location.href='@Url.Action(docs.urlAction, docs.urlController)'"
+                                            class="w-100 btn btn-outline-danger standard-btn border-red hover-red inverse text-uppercase mt-3 fs-3">
+                                        @docs.btnTexto
+                                    </button>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+</body>
+
+
+
+@*<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/page/servicioCliente.js"></script>*@
+

@@ -1,0 +1,252 @@
+﻿@model MarubeniCreditWeb.Models.FormContactoModel
+
+
+<div id="modContactoPaso1">
+    <div class="modal-header no-align border-0">
+        <!-- Progress Bar -->
+        <div class="progress-container p-2 col-11">
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     style="width: 50%"
+                     aria-valuenow="50"
+                     aria-valuemin="0"
+                     aria-valuemax="100"></div>
+            </div>
+            <p class="card-subtitle py-3">Paso 1 de 2</p>
+        </div>
+        <div class="button-container col-1 py-2 px-4">
+            <button type="button"
+                    class="btn-close p-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+    <div class="modal-body pt-0 px-4">
+        <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+            Formulario de Contacto
+        </h3>
+        <p class="card-subtitle fs-5 fw-bold py-3">
+            Selecciona tu tipo de consulta
+        </p>
+        <!-- Form -->
+        @using (Html.BeginForm(new { id = "formContacto1" }))
+        {
+            <div class="row justify-content-end">
+                @foreach (var item in Model.lstTipoConsulta)
+                {
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">@item.tipoConsulta</p>
+                            <input type="radio" name="rdbTipoConsulta" id="tipoConsulta_@item.orden" value="@item.tipoConsulta" onclick="ValidarTipoConsulta()" />
+                        </label>
+                    </div>
+                }
+
+                <!-- Button-Avanzar -->
+                <div class="col-sm-6 col-12 my-2">
+                    <button type="button"
+                            id="btnModFormContacto1"
+                            onclick="ModContactoPaso2()"
+                            disabled="disabled"
+                            class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase">
+                        Avanzar
+                        <img class="mx-3" src="~/img/icons/white-arrow.png" alt="" />
+                    </button>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+<div id="modContactoPaso2" class="visually-hidden">
+    <div class="modal-header no-align border-0">
+        <!-- Progress Bar -->
+        <div class="progress-container p-2 col-11">
+            <div class="progress">
+                <div class="progress-bar"
+                     role="progressbar"
+                     aria-label="Basic example"
+                     style="width: 100%"
+                     aria-valuenow="50"
+                     aria-valuemin="0"
+                     aria-valuemax="100"></div>
+            </div>
+            <p class="card-subtitle py-3">Paso 2 de 2</p>
+        </div>
+        <div class="button-container col-1 py-2 px-4">
+            <button type="button"
+                    class="btn-close p-0"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+        </div>
+    </div>
+
+    <form id="formContacto" method="post">
+        <div class="modal-body pt-0 px-4">
+            <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                Formulario de Contacto
+            </h3>
+            <p class="card-subtitle fs-5 fw-bold py-3">
+                A continuación completa tus datos:
+            </p>
+            <!-- Form -->
+            @*@using (Html.BeginForm(new { id = "formContacto2" }))
+            {*@
+
+            <div class="row">
+                <!-- Personal Data -->
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="nombreCont" class="form-label mb-0 px-3">Nombre*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics"
+                               id="nombreCont"
+                               name="nombreCont"
+                               autocomplete="off"
+                               maxlength="40"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="apellidoCont" class="form-label mb-0 px-3">Apellido*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics"
+                               id="apellidoCont"
+                               name="apellidoCont"
+                               autocomplete="off"
+                               maxlength="40"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="rutCont" class="form-label mb-0 px-3">Rut*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 rut"
+                               id="rutCont"
+                               name="rutCont"
+                               onblur="ValidaRut()"
+                               autocomplete="off"
+                               maxlength="12"
+                               placeholder="12.345.678-9" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="direccionCont" class="form-label mb-0 px-3">Email*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                               id="emailCont"
+                               name="emailCont"
+                               autocomplete="off"
+                               maxlength="60"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+
+                <!-- Selects Button -->
+                <div class="col-md-6 col-12 my-2">
+                    <p class="mb-0 px-3">Región*</p>
+                    <label class="input-tab align-items-center justify-content-between w-100">
+                        <select class="form-select border-0 p-3 input-select border-rad-10"
+                                aria-label="Default select example" id="regionCont" name="regionCont">
+                            <option selected value="0">Selecciona tu región</option>
+                            @foreach (var reg in Model.lstRegion)
+                            {
+                                <option value="@reg.idRegion">@reg.region</option>
+
+                            }
+                        </select>
+                    </label>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <p class="mb-0 px-3">Comuna*</p>
+                    <label class="input-tab align-items-center justify-content-between w-100">
+                        @if (ViewBag.lstComuna == null)
+                        {
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example" id="comunaCont" name="comunaCont">
+                                <option selected value="0">Selecciona tu Comuna</option>
+                                @*@foreach (var com in Model.lstComuna)
+                                {
+                                    <option value="@com.comuna">@com.comuna</option>
+
+                                }*@
+                            </select>
+                        }
+                        else
+                        {
+                            @Html.DropDownList("comunaCont", (SelectList)ViewBag.lstComuna, htmlAttributes: new { @class = "form-select border-0 p-3 input-select border-rad-1" });
+                        }
+                      
+                    </label>
+                </div>
+                <!-- Addres -->
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="direccionCont" class="form-label mb-0 px-3">Dirección*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics-number"
+                               id="direccionCont"
+                               name="direccionCont"
+                               autocomplete="off"
+                               maxlength="100"
+                               placeholder="Pedro" />
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 my-2">
+                    <div class="align-items-center justify-content-between w-100">
+                        <label for="telefonoCont" class="form-label mb-0 px-3">Teléfono*</label>
+                        <input type="text"
+                               class="form-control w-100 border-0 p-3  border-rad-10 input-number phone"
+                               id="telefonoCont"
+                               name="telefonoCont"
+                               autocomplete="off"
+                               maxlength="17"
+                               placeholder="(+56) 2 9999-9999" />
+                    </div>
+                </div>
+                <div class="col-12 my-2">
+                    <label for="mensajeCont" class="form-label px-3">Mensaje</label>
+                    <textarea class="form-control border-rad-10 border-0"
+                              id="mensajeCont"
+                              name="mensajeCont"
+                              autocomplete="off"
+                              maxlength="500"
+                              rows="3"></textarea>
+                </div>
+                <input type="hidden" id="tipoConsultaCont" name="tipoConsultaCont" value="" />
+            </div>
+
+        </div>
+        <br />
+        <div align="right" id="g-recaptcha-contacto" class="g-recaptcha" data-callback="recaptchaContactoCallback" data-sitekey=@ViewBag.Key></div>
+        <br />
+        @Html.AntiForgeryToken()
+    </form>
+    <div class="modal-footer border-0 p-4">
+        <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+          
+            <div class="col-sm-5 col-12">
+                <button type="button"
+                        disabled="disabled"
+                        id="btnModFormContacto2"
+                        onclick="GuardarContacto()"
+                        @*data-bs-toggle="modal"
+                    data-bs-target="#graciasModal"*@
+                        class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn btn-envio">
+                    Enviar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/Scripts/page/servicioCliente.js"></script>
+<script type="text/javascript" src="~/Scripts/page/comun.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

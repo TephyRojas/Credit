@@ -1,0 +1,161 @@
+﻿@model MarubeniCreditWeb.Models.LugaresPagoModel
+@{
+    ViewBag.Title = "LugaresPago";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body id="lugares-de-pago">
+    <!-- MAIN -->
+    <main class="container-xl p-0">
+        <!-- AVISO IMPORTANTE-->
+        <section>
+            <div class="container-fluid p-0">
+                <div class="col-12 py-2 px-0">
+                    <div class="content bg-yellow d-flex p-md-4 p-2 justify-content-between rounded-3">
+                        <p class="mb-0 text-center fs-5 aux-text"> <span class="fw-bold">Aviso Importante:</span>  Cualquier problema con los pagos de tu cuota, llámanos al +56 2 2680 3370 o envíanos un correo a contacto@marubenicredit.cl</p>
+                        <img class="warning-img" src="~/img/icons/X.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PAGA-TU-CUOTA-MOBILE-->
+        <section class="only-mobile pay-cuote">
+            <div class="container-fluid d-flex justify-content-md-start justify-content-center">
+                <div class="col-sm-10 col-12 p-md-5 p-2 mt-md-5 mt-3">
+                    <div class="finance-card grey d-flex flex-wrap justify-content-center p-4">
+                        <div class="col-md-6 col-lg-7 col-12 p-sm-4">
+                            <div class="finance-content p-4 px-md-5">
+                                <h2 class="mb-0 font-20 text-gray px-3 ">@Model.formaPago.titulo</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 col-12 p-sm-4">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                <button onclick="location.href='@Model.formaPago.url'" type="button" formtarget="_blank" class="btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase col-md-6 col-lg-7 col-12">@Model.formaPago.btnTexto<img class="mx-2" src="~/img/icons/white-arrow.png" alt=""></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MANTEN-TUS-CUOTAS-->
+        <section class="only-desktop">
+            <div class="container-fluid p-0">
+                <div class="col-12 my-4">
+                    <div class="finance-card d-flex flex-wrap justify-content-center py-3">
+                        <div class="col-md-6  col-12">
+                            <div class="finance-content ">
+                                <h2 class="mb-0 font-30 text-gray p-5">@Model.formaPago.titulo </h2>
+                                <p class="fs-5 px-5 text-uppercase">@Model.formaPago.texto</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6  col-12">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                @*<button type="button" class="btn btn-danger bg-red standard-btn border-red hover-red inverse text-uppercase col-xl-7 col-lg-8  col-10">@Model.formaPago.btnTexto</button>*@
+                                <a href="@Model.formaPago.url" target="_blank" class="btn btn-danger bg-red standard-btn border-red hover-red inverse text-uppercase col-xl-7 col-lg-8  col-10 ">@Model.formaPago.btnTexto</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ACTIVA TU PAC-->
+        <section>
+            <div class="container-fluid d-flex justify-content-md-start justify-content-center">
+                <div class="col-12 p-md-5 p-0 px-md-4 px-0 ">
+                    <div class="d-flex flex-wrap  my-3">
+                        <div class="col-md-6  col-12">
+                            <div class="finance-content p-4 px-md-5">
+                                <h2 class="mb-0 font-30 text-gray text-md-start text-center fw-bold">@Model.activaPAC.titulo</h2>
+                                <br />
+                                <ul class="list">
+
+                                    @foreach (var texto in Model.activaPAC.lstTexto)
+                                    {
+                                        <li class="fs-4">@texto.texto</li>
+                                    }
+                                </ul>
+                                @*<p class="fs-3 py-2 fw-normal text-md-start text-center">@Model.activaPAC.texto </p>*@
+                            </div>
+                        </div>
+                        <div class="col-md-6  col-12">
+                            <div class="d-flex justify-content-center align-items-center h-100 w-100">
+                                <button type="button"
+                                        class="btn  btn-outline-danger standard-btn border-red hover-red  text-uppercase  col-xl-5 col-lg-6 col-md-9 col-sm-8 col-9"
+                                        onclick="MostrarFormContacto1(6)">
+                                    activa tu pac<img class="mx-4 only-desktop" src="~/img/icons/@Model.activaPAC.icono" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGA-TUS-CUOTAS-->
+        <section id="cards" class="only-desktop">
+            <div class="container-fluid d-flex justify-content-center">
+                <div class="col-12">
+                    <div class="row p-0">
+                        @foreach (var lugpag in Model.lstLugaresPago)
+                        {
+                            <div class="col-md-6 col-sm-8 col-12 py-2 ps-4 mt-3">
+                                <!-- CARD-->
+                                <div class="finance-card d-flex flex-wrap justify-content-center">
+                                    <div class="col-xl-5 col-12 d-flex align-items-center">
+                                        <div class="p-2 m-2">
+                                            <p class="mb-0  text-gray font-20">
+                                                @lugpag.texto <span class="fw-bolder"><br />    @lugpag.titulo</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-7 col-12">
+                                        <div class="d-flex justify-content-center align-items-center h-100">
+                                            <a href="@lugpag.url" target="_blank" class="col-10 btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase ">@lugpag.btnTexto</a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PAGA-TU-CUOTA-MOBILE-->
+        @foreach (var lugpagm in Model.lstLugaresPago)
+        {
+            <section class="only-mobile  finance-card-mobile">
+                <div class="container-fluid d-flex justify-content-md-start justify-content-center">
+                    <div class="col-sm-10 col-12 p-md-5 p-0 px-md-4 px-1 mt-5">
+                        <div class="finance-card d-flex flex-wrap justify-content-center py-md-3 py-0">
+                            <div class="col-md-6 col-lg-7 col-12">
+                                <div class="finance-content p-4 px-md-5 px-3 text-white-space">
+                                    <h2 class="mb-0 font-20 text-gray px-md-5">
+                                        @lugpagm.texto
+                                        <span class="fw-bolder"> @lugpagm.titulo</span>
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-5 col-12">
+                                <div class="d-flex justify-content-center align-items-center h-100">
+                                    <button onclick="location.href='@lugpagm.url'" type="button" class="btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase col-md-6 col-lg-7 col-sm-10 col-12" target="_blank">@lugpagm.btnTexto<img class="mx-2" src="~/img/icons/white-arrow.png" alt=""></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        }
+
+    </main>
+</body>
+
+@*<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/page/servicioCliente.js"></script>*@
+

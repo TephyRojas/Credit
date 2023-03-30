@@ -1,0 +1,124 @@
+﻿	<!-- Modal-Actualiza-tus datos-->
+
+<div class="modal-header justify-close-btn border-0">
+    <div class="button-container col-1 py-2 px-4">
+        <button type="button"
+                class="btn-close p-0"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+    </div>
+</div>
+<form id="formActDatos" name="formActDatos">
+    <div class="modal-body pt-0 px-4">
+        <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+            Actualiza tus datos
+        </h3>
+        <p class="card-subtitle fs-5 fw-bold py-3">
+            A continuación completa tus datos:
+        </p>
+        <!-- Form -->
+        <div class="row">
+            <!-- Personal Data -->
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">RUT*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 input-text border-rad-10 rut"
+                           onblur="ValidaRut()"
+                           id="rutActDatos"
+                           name="rutActDatos"
+                           autocomplete="off"
+                           maxlength="12"
+                           placeholder="12.345.678-9" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics"
+                           id="nombreActDatos"
+                           name="nombreActDatos"
+                           autocomplete="off"
+                           maxlength="40"
+                           placeholder="Pérez" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Domicilo*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics-number"
+                           id="direccionActDatos"
+                           name="direccionActDatos"
+                           autocomplete="off"
+                           maxlength="100"
+                           placeholder="Avenida Las delicias, número 24" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Comuna*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 input-text border-rad-10 lyrics-number"
+                           id="comunaActDatos"
+                           name="comunaActDatos"
+                           autocomplete="off"
+                            maxlength="30"
+                           placeholder="Santiago centro" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Télefono Móvil*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 border-rad-10 phone"
+                           id="telMovilActDatos"
+                           name="telMovilActDatos"
+                           autocomplete="off"
+                           maxlength="17"
+                           placeholder="(+56) 9 9999-9999" />
+                </div>
+            </div>
+            <div class="col-md-6 col-12 my-2">
+                <div class="align-items-center justify-content-between w-100">
+                    <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Teléfono*</label>
+                    <input type="text"
+                           class="form-control w-100 border-0 p-3 border-rad-10 phone"
+                           id="telefonoActDatos"
+                           name="telefonoActDatos"
+                           autocomplete="off"
+                           maxlength="17"
+                           placeholder="(+56) 2 9999-9999" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div align="right" id="g-recaptcha-actDatos" class="g-recaptcha" data-callback="recaptchaActDatosCallBack" data-sitekey=@ViewBag.Key></div>
+    <br />
+    @Html.AntiForgeryToken()
+</form>
+<div class="modal-footer border-0 p-4">
+    <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+        
+        <div class="col-sm-5 col-12">
+            <button type="button"
+                    disabled="disabled"
+                    id="btnActDatos"
+                    onclick="GuardarActDatos()"
+                    @*data-bs-toggle="modal"
+                                data-bs-target="#datoslistos"*@
+                    class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn btn-envio">
+                Enviar
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>-->
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+<!--<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>-->
+@*<script src="~/Scripts/page/jquery.maskedinput.min.js"></script>*@
+<script type="text/javascript" src="~/Scripts/page/comun.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>

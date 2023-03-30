@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewBag.Title = "TrabajaConNosotros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body id="tipos-de-creditos">
+    <!-- MAIN -->
+    <main class="container-fluid p-0">
+        <!-- HERO -->
+        <section class="p-md-0 mt-0">
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-12">
+                    <div class="d-flex flex-wrap align-items-stretch mt-4 rounded py-lg-5 py-md-3 py-1 px-md-4">
+                        <div class="col-md-6 col-12 order-md-1 order-2">
+                            <div class="content bg-card h-100 d-flex flex-column justify-content-center align-items-center p-lg-5 p-md-3">
+                                <div class="p-lg-5 p-3">
+                                    <h1 class="font-30  mb-4 fw-bold pe-4 mt-md-0 mt-4 text-md-start text-center">
+                                        Súmate a nuestro gran equipo de trabajo
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12 order-md-2 order-1">
+                            <div class="img-hero-container">
+                                <img class="img-fluid border-top-right border-bottom-right" src="~/img/imgs/work-with-us.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Description -->
+        <section class="p-md-0 mt-0">
+            <div class="container-fluid">
+                <div class="main-content p-md-5 p-0 d-flex justify-content-center px-md-5 px-2">
+                    <div class="col-md-9 col-sm-10 col-12">
+                        <div class="p-md-5 p-0 d-flex flex-column align-items-center">
+                            <h1 class="text-red fw-bold p-4">Trabaja con Nosotros</h1>
+                            <p class="mb-0 text-center font-30 only-desktop">
+                                Si te apasiona la atención al cliente, te invitamos a ser parte de nuestro gran equipo de trabajo. Déjanos tus datos.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Form -->
+        <section id="form-work" class="p-md-0 mt-0 ">
+            <div class="container-fluid">
+                <form id="formTrabNos" name="formTrabNos">
+                    <div class="row justify-content-center">
+
+                        <div class="col-lg-5 col-md-7 col-sm-9 col-12 d-flex flex-wrap fs-5 border-1">
+
+                            <div class="col-12 my-2">
+                                <h4 class="text-dark fw-bold">A continuación completa tus datos:</h3>
+                            </div>
+                            <!-- Personal Data -->
+                            <div class="col-md-6 col-12 my-2">
+                                <div class="align-items-center justify-content-between w-100 px-2">
+                                    <label for="exampleFormControlInput1" class="form-label mb-0 px-1 fs-4">Nombre*</label>
+                                    <input type="text"
+                                           class="form-control w-100 border-0 p-3 input-text border-rad-10 fs-4"
+                                           id="nombreTrabNos"
+                                           name="nombreTrabNos"
+                                           autocomplete="off"
+                                           maxlength="40"
+                                           placeholder="Pedro" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 my-2">
+                                <div class="align-items-center justify-content-between w-100 px-2">
+                                    <label for="exampleFormControlInput1" class="form-label mb-0 px-1 fs-4">Apellido*</label>
+                                    <input type="text"
+                                           class="form-control w-100 border-0 p-3 input-text border-rad-10 fs-4"
+                                           id="apellidoTrabNos"
+                                           name="apellidoTrabNos"
+                                           autocomplete="off"
+                                           maxlength="40"
+                                           placeholder="Pedro" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 my-2">
+                                <div class="align-items-center justify-content-between w-100 px-2">
+                                    <label for="exampleFormControlInput1" class="form-label mb-0 px-1 fs-4">Teléfono Móvil*</label>
+                                    <input type="text"
+                                           class="form-control w-100 border-0 p-3  border-rad-10 fs-4 input-number phone"
+                                           id="telMovilTrabNos"
+                                           name="telMovilTrabNos"
+                                           autocomplete="off"
+                                           maxlength="17"
+                                           placeholder="(+56) 9 9999-9999" />
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 my-2">
+                                <div class="align-items-center justify-content-between w-100 px-2">
+                                    <label for="exampleFormControlInput1" class="form-label mb-0 px-1 fs-4">E-mail*</label>
+                                    <input type="text"
+                                           class="form-control w-100 border-0 p-3 input-text border-rad-10 fs-4"
+                                           id="emailTrabNos"
+                                           name="emailTrabNos"
+                                           autocomplete="off"
+                                           maxlength="60"
+                                           placeholder="Pedro" />
+                                </div>
+                            </div>
+                            <!-- Selects Button -->
+                            <div class="col-md-6 col-12 my-2">
+                                <div class="px-2">
+                                    <label class="input-tab align-items-center justify-content-between w-100  fs-4">
+                                        <select class="form-select py-3  input-select border-rad-10 fs-4 px-2"
+                                                aria-label="Default select example" id="regionTrabNos" name="regionTrabNos">
+                                            <option selected value="">Selecciona tu región</option>
+                                            @foreach (var reg in (List<MarubeniCreditWeb.Data.Package.RegionComunaPkg.Region>)ViewData["lstRegion"])
+                                            {
+                                                <option value="@reg.region">@reg.region</option>
+
+                                            }
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12 my-2">
+                                <div class=" px-2">
+                                    <label class="input-tab align-items-center justify-content-between w-100  fs-4">
+                                        <select class="form-select py-3 input-select border-rad-10 px-2 fs-4"
+                                                aria-label="Default select example" id="comunaTrabNos" name="comunaTrabNos">
+                                            <option selected value="">Selecciona tu Comuna</option>
+                                            @foreach (var com in (List<MarubeniCreditWeb.Data.Package.RegionComunaPkg.Comuna>)ViewData["lstComuna"])
+                                            {
+                                                <option value="@com.comuna">@com.comuna</option>
+
+                                            }
+                                        </select>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Adjuntar -->
+                            <div class="col-12 my-2">
+                                <div class="col-12 d-flex position-relative">
+                                    <div class="col-8 px-2 py-2">
+                                        <input id="fileTrabNosName"
+                                               type="text"
+                                               class="form-control w-100 border-0 input-text border-rad-10 fs-4"
+                                               placeholder="Adjuntar C.V." />
+                                    </div>
+                                    <div class="col-4 d-flex align-items-center">
+                                        @*<button id="btnFileTrabNos" class="btn-grey bg-upload text-white w-100 d-block border-0 py-2 border-rad-10">
+                        <span class="only-desktop">Adjuntar archivo </span>
+                        <img src="~/img/icons/clip.png">
+                    </button>*@
+                                        <button id="btnFileTrabNos" onclick="CargaFile()" class="btn-grey text-white w-100 d-block border-0 p-2 border-rad-10">
+
+                                            <span class="only-desktop">Adjuntar archivo</span>
+                                            <img src="~/img/icons/clip.png">
+                                        </button>
+                                    </div>
+                                    <input class="file" type="file" name="fileTrabNos" id="fileTrabNos" accept="image/jpeg, image/png, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                                </div>
+                            </div>
+
+                            <!-- Mensaje -->
+                            <div class="col-12 my-2">
+                                <label for="exampleFormControlTextarea1" class="form-label mb-0 px-1 fs-4">Mensaje</label>
+                                <textarea class="form-control border-rad-10 border-1 fs-3"
+                                          id="mensajeTrabNos"
+                                          name="mensajeTrabNos"
+                                          autocomplete="off"
+                                          rows="3"></textarea>
+                            </div>
+                            <div class="col-12 my-2" style="align-content:end">
+                                <div align="right" class="g-recaptcha" data-callback="recaptchaTrabNosCallback" data-sitekey=@ViewBag.Key></div>
+                            </div>
+                            <div id="MsjRecibido" class="col-12 my-2 visually-hidden">
+                                <h4 class="text-red fw-bold">¡Gracias por contactarnos! Hemos recibo tu datos </h4>
+                            </div>
+                            <div class="col-12 p-md-4">
+                                <div class="d-flex justify-content-sm-end justify-content-center">
+                                    @Html.AntiForgeryToken()
+                                    <div class="col-sm-4 col-12">
+                                        <button type="button"
+                                                disabled="disabled"
+                                                id="btnTrabNos"
+                                                onclick="GuardarTrabNos()"
+                                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase btn-envio">
+                                            Enviar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </section>
+    </main>
+</body>
+
+@*<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/page/home.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/page/comun.js"></script>*@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+

@@ -1,0 +1,157 @@
+﻿@model MarubeniCreditWeb.Models.PortabilidadModel
+@using MarubeniCreditWeb.Data.Package.Comun;
+@{
+    ViewBag.Title = "Portabilidad";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body id="portabilidad-financiera">
+    <!-- MAIN -->
+    <main class="container-fluid p-0">
+        <!-- Portabilidad Financiera -->
+
+        <section>
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-12">
+                    <div class="bg-card d-flex flex-wrap  align-items-center justify-content-center mt-4 border-rad-20 py-lg-5 py-md-3 py-1">
+                        <!-- Card -->
+                        <div class="col-xl-5 col-lg-12">
+                            <div class="d-flex flex-column align-items-sm-start align-items-center pt-3">
+                                <h1 class="fw-bold">Portabilidad Financiera</h1>
+                                <p class="fs-3 w-sm-75 w-100 py-3 ">
+                                    Antes de completar el formulario de Portabilidad Financiera debes descargar el documento, llenarlo y luego adjuntarlo en el Formulario de Solicitud de Portabilidad Financiera.
+                                </p>
+                                <div class="row w-100">
+                                    <button type="button"
+                                            onclick="location.href='@Url.Action("DownloadFile", "ServicioCliente", new { codFile = (int)Objeto.Archivos.Formulario_Portabilidad})'"
+                                            class=" micro-btn btn btn-outline-danger standard-btn border-red hover-red inverse text-uppercase my-md-3 my-5 fs-3 d-flex align-items-center col-xl-8 col-md-6 col-12">
+                                        <img class="mx-md-3 mx-2" src="~/img/icons/red-down-button.svg" alt="">
+                                        <p class="mb-0">descargar documento</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-7 col-lg-12 col-12 row justify-content-center my-4 px-xl-4 px-0">
+                            <!-- Card -->
+                            <div class="col-xl-6 col-lg-6 col-sm-6 col-12 px-sm-3 px-0 my-4">
+                                <div class="micro-card finance-card p-5 h-100">
+                                    <p class="font-24 fw-bold text-center mb-3 m-h-card">
+                                        Solicitud Portabilidad<br />
+                                        Financiera
+                                    </p>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <!-- Button-Modal -->
+                                        <button type="button"
+                                                id="btnFormPortSolicitud"
+                                                onclick="MostrarFormPortSolicitud()"
+                                                @*data-bs-toggle="modal"
+                                            data-bs-target="#formulariosPort"*@
+                                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-red inverse  text-uppercase d-block">
+                                            completar formulario
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card -->
+                            <div class="col-xl-6 col-lg-6 col-sm-6 col-12 px-sm-3 px-0 my-4">
+                                <div class="micro-card finance-card p-5 h-100">
+                                    <p class="font-24 fw-bold text-center mb-3 m-h-card px-5">
+                                        Solicitud de <br />Certificados
+                                    </p>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <!-- Button-Modal -->
+                                        <button type="button"
+                                                id="btnFormPortCertificado"
+                                                onclick="MostrarFormPortCertificado1()"
+                                                @*data-bs-toggle="modal"
+                                            data-bs-target="#certificados"*@
+                                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-red inverse  text-uppercase d-block">
+                                            completar formulario
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas mas frecuentes -->
+        <section>
+            <div class="row m-0 p-md-4 p-2">
+                <div class="col-sm-4 col-12">
+                    <div class="content p-3 my-md-0 my-4">
+                        <h2 class="fs-1 fw-bold">Preguntas más frecuentes</h2>
+                        <p class="fs-2 py-3">
+                            Asociadas a la portabilidad financiera.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-12 d-flex justify-content-center">
+                    <div class="col-lg-8 col-md-10 col-12">
+                        <div class="accordion" id="accordionExample">
+                            <!-- Item#1 -->
+                            @foreach (var preg in Model.lstPregutaFrecuente)
+                            {
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="heading_@preg.orden">
+                                        <button class="accordion-button collapsed fs-5 text-gray"
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapse_@preg.orden"
+                                                aria-expanded="false"
+                                                aria-controls="collapse_@preg.orden">
+                                            @preg.pregunta
+                                        </button>
+                                    </h2>
+                                    <div id="collapse_@preg.orden"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="heading_@preg.orden"
+                                         data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <p class="mb-0 text-gray fs-5 text-white-space">
+                                                @preg.respuesta
+
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otros-Documentos -->
+        <section class="m-h-200 border-top">
+            <div class="row m-0 py-5">
+                <div class="col-12">
+                    <p class="font-20 text-gray text-center mb-0 mt-4">
+                        Si desea más información, favor enviar un mail al correo
+                    </p>
+                    <p class="font-20 text-red fw-bold text-center mb-md-3">Portabilidad.financiera@marubenicredit.cl</p>
+                    <div class="row justify-content-center m-0 py-4">
+
+                        <div class="col-xl-5 col-lg-6 col-md-9 col-sm-10 col-12 ">
+                            <div class="d-flex justify-content-center w-100">
+                                <button type="button"
+                                        onclick="location.href='@Url.Action("ServicioCliente", "ServicioCliente")'"
+                                        class="btn btn-outline-danger standard-btn border-red hover-red inverse text-uppercase mt-3 fs-3 d-flex align-items-center justify-content-center col-sm-10 col-11">
+                                    <img class="mx-md-3 mx-1 px-2" src="~/img/icons/left-arrow.png" alt="">
+                                    <p class="mb-0 font-20 text-red">Volver a servicio al cliente</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+@*<script type="text/javascript" src="~/Scripts/jquery-3.4.1.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>*@
+@*<script type="text/javascript" src="~/Scripts/page/servicioCliente.js"></script>*@

@@ -1,0 +1,411 @@
+@media only screen and (max-width: 1158px) {
+	.finance-content {
+		padding: 20px 40px !important;
+	}
+}
+@media only screen and (max-width: 1058px) {
+	.nav-link {
+		font-size: 14px;
+	}
+	.header-btn .nav-link {
+		font-size: 12px !important;
+	}
+}
+@media (max-width: 991px) {
+	#our-company .finance-card {
+		width: auto;
+		padding:  0px;
+		border-radius: 20px;
+	}
+	#our-company .big-icon {
+		margin-bottom: 0px;
+	}
+	.font-30 {
+		font-size: 20px;
+	}
+	.list-container {
+		padding: 0 30px !important;
+	}
+	.list-container li {
+		font-size: 18px !important;
+	}
+	.font-20 {
+		font-size: 20px;
+	}
+	.standard-btn {
+		font-size: 14px !important;
+		line-height: 125% !important;
+		padding: 10px 0 !important;
+	}
+
+	.card .standard-btn  {
+		font-size: 14px !important;
+		line-height: 140% !important;
+		padding: 10px !important;
+		min-height: 42px;
+	}
+	.menu-mobile {
+		display: flex;
+		list-style: disc;
+		color: white;
+	}
+	.menu-mobile {
+		align-items: normal !important;
+	}
+	.menu-desktop {
+		display: none;
+	}
+	.menu-mobile .nav-link {
+		font-size: 15px;
+	}
+	.navbar-nav {
+		height: 100vh;
+		max-width: 400px;
+		margin: 0 auto;
+		width: 80%;
+		padding-top: 50px;
+	}
+	.header-btn {
+		background-color: transparent;
+		padding: 10px 17px !important;
+		border-radius: 30px;
+		line-height: 10px;
+		margin: 10px 0;
+		list-style: none;
+		width: 100%;
+	}
+	.header-btn a {
+		text-align: center;
+	}
+	.dropdown-menu {
+		background-color: var(--red);
+		border: none;
+	}
+	.nav-link {
+		text-align: start;
+	}
+	.navbar-dark .navbar-toggler {
+		color: var(--white);
+	}
+	.dropdown-menu li a {
+		font-family: var(--main-font) !important;
+		color: var(--white);
+		padding: 8px 0;
+		opacity: 0.8;
+		transition: all 0.6s;
+		font-size: 10px;
+	}
+	.dropdown-menu li a:hover {
+		background-color: transparent;
+		color: var(--white);
+		opacity: 1;
+		transition: all 0.6s;
+	}
+	.swiper-pagination {
+		bottom: 45px !important;
+	}
+}
+@media (max-width: 767px) {
+	#our-company .big-icon .icon-1 {
+		width: 40px;
+	}
+	#our-company .big-icon .icon-2 {
+		width: 40px;
+	}
+	#our-company .big-icon .icon-3 {
+		width: 30px;
+	}
+	#our-company .big-icon .icon-4 {
+		width: 40px;
+	}
+	#our-company .big-icon {
+		height: 40px !important;
+	}
+	#our-company .icon-font {
+		height: 40px !important;
+	}
+	#our-company .img-hero-container img {
+		border-radius: 20px !important;
+	}
+	#our-company .finance-card strong {
+		font-size: 16px;
+	}
+
+	#our-company .aux-height {
+		height: 110px !important;
+	}
+
+	#portabilidad-financiera .m-h-card {
+		min-height: auto;
+	}
+
+	#portabilidad-financiera .finance-card {
+		padding: 20px !important;
+	}
+
+	#portabilidad-financiera .micro-card p {
+		font-size: 20px !important;
+		padding: 10px 20px;
+	}
+	
+	.navbar-nav {
+		margin: 0 !important;
+	}
+	.header-btn {
+		padding: 10px 40px !important;
+		width: 290px;
+		background: #FFCACC !important;
+	}
+	.header-btn .nav-link {
+		color: var(--red) !important;
+	}
+	
+	.only-mobile-sm {
+		display: block;
+	}
+
+	.swiper-slide .standard-btn.bg-red {
+		display: none !important;
+	}
+	.bg-card {
+		background-color: white !important;
+	}
+	.img-credit-card {
+		width: 100px;
+		height: 100px;
+	}
+	.micro-card button {
+		width: 100% !important;
+	}
+	.only-desktop {
+		display: none;
+	}
+	.only-mobile {
+		display: block;
+	}
+	footer .img-container {
+		justify-content: center;
+	}
+	.contact {
+		margin: 0 !important;
+		padding: 20px !important;
+	}
+	h1.title-slider,
+	h2.title-slider {
+		font-size: 20px;
+	}
+	.finance-card {
+		padding: 10px 0px 20px 0px !important;
+		text-align: center;
+	}
+	.finance-content {
+		padding: 20px !important;
+	}
+	.contact h5 {
+		display: none;
+	}
+	.contact .standard-btn {
+		font-size: 14px !important;
+		line-height: 15px;
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		top: 28%;
+	}
+
+	.swiper-content {
+		background-color: white;
+		min-height: 100px;
+	}
+	.font-20 {
+		font-size: 20px;
+	}
+	.swiper-pagination {
+		bottom: 0 !important;
+		left: 0 !important;
+		justify-content: center;
+	}
+	.swiper-c {
+		flex-direction: column-reverse;
+		height: auto !important;
+		min-height: auto !important;
+	}
+	.rounded-left {
+		border-top-left-radius: 0 !important;
+		border-bottom-left-radius: 0 !important;
+	}
+	.rounded-right {
+		border-top-right-radius: 0 !important;
+		border-bottom-right-radius: 0 !important;
+	}
+
+	.page-link {
+		font-size: 10px !important;
+	}
+	.micro-header {
+		display: none !important;
+	}
+	.menu .text-red {
+		color: var(--gray-font);
+	}
+}
+@media (max-width: 576px) {
+	footer .text-light-gray.adjust-font-footer {
+		color: #404040 !important;
+		opacity: 1;
+	}
+	
+	footer .footer-container h4 {
+		font-size: 16px;
+		color: black !important;
+	}
+	#portabilidad-financiera .bg-card.d-flex {
+		padding: 5px !important;
+	}
+	.mobile-btn {
+		display: block;
+	}
+	.icon-font {
+		height: auto !important;
+	}
+	.credit-card .fs-2 {
+		font-size: calc(1rem + .9vw)!important;
+	}
+	
+	.credit-card .fs-4 {
+		font-size: 12px !important;
+	}
+	.accordion-button {
+		padding: 0 10px !important;
+		min-height: 50px;
+	}
+
+	.footer-container h4 {
+		color: var(--marubeni-grey) !important;
+		border-bottom: 1px solid var(--gray-text);
+	}
+	.font-30 {
+		font-size: 20px;
+	}
+	.font-20 {
+		font-size: 18px;
+	}
+	.card img {
+		display: none;
+	}
+	.card-body {
+		height: auto;
+		min-height: auto;
+	}
+	.card h3 {
+		font-size: 20px;
+		color: #404040;
+	}
+	.card .standard-btn.bg-red {
+		background-color: transparent !important;
+		border: 1px solid var(--red) !important;
+		color: var(--red) !important;
+	}
+	.navbar-nav {
+		padding: 20px;
+	}
+	.finance-content {
+		padding: 5px 10px !important;
+	}
+}
+
+@media (max-width: 550px) {
+	.swiper-slide h2 {
+		padding: 17px;
+	}
+	
+	.pin-icon {
+			display: inline-block;
+			width: 27px;
+			height: 40px;
+	}
+	.aux-text {
+		font-size: 12px !important;
+	}
+	.warning-img {
+		display: none;
+	}
+	.contact .standard-btn {
+		padding: 10px 25px !important;
+	}
+	.card-body {
+		padding-top: 20px !important;
+		padding-bottom: 20px !important;
+		border-radius: 10px !important;
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		top: 30%;
+		width: 27px;
+		height: 27px;
+	}
+	.swiper-button-next img,
+	.swiper-button-prev img {
+		width: 15px;
+		height: 10px;
+	}
+	.header-btn.micro {
+		padding: 10px !important;
+	}
+	.page-link {
+		padding: 2px 10px !important;
+	}
+	.logo-container img {
+		max-width: 160px !important;
+	}
+	.swiper-pagination {
+		bottom: 15px !important;
+	}
+	h2 {
+		font-size: 20px;
+	}
+	.main-content p {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 450px) {
+	.adjust-font-footer {
+		font-size: 16px !important;
+	}
+
+	.swiper-pagination {
+		bottom: 10px !important;
+	}
+	.accordion-header {
+		font-size: 20px;
+	}
+	.font-20.text-red {
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 400px) {
+	.swiper-pagination {
+		bottom: 5px !important;
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+		top: 30% !important;
+	}
+	.text-just {
+		text-align: justify;
+	}
+}
+@media (max-width: 375px) {
+	
+}
+
+
+
+
+@media (max-width: 350px) {
+	.swiper-pagination {
+		bottom: 0px !important;
+	}
+}

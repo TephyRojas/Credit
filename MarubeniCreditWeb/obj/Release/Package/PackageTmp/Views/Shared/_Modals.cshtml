@@ -1,0 +1,986 @@
+﻿ <!-- Modal-Actualiza-tus datos-->
+<div class="modal fade"
+     id="actualizaD"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Actualiza tus datos
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    A continuación completa tus datos:
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <!-- Personal Data -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">RUT*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="12345678-9" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pérez" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Domicilo*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Avenida Las delicias, número 24" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Comuna*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Santiago centro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Telefono Movil*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="+56 9 12345678" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Telefono*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="2 32102315" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+                    <div class="col-sm-5 col-12">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#datoslistos"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Dat0s-Actualizados -->
+<div class="modal fade"
+     id="datoslistos"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3 bg-card border-rad-20">
+            <div class="modal-header justify-content-end no-align border-0">
+                <div class="button-container col-2 py-2 d-flex justify-content-end">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold text-center" id="exampleModalLabel">
+                    Tus datos han sido actualizados correctamente
+                </h3>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="col-sm-9 col-12">
+                        <button type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            <img class="left-arrow-icon"
+                                 src="~/img/icons/left-white-arrow.svg"
+                                 alt="" />
+                            volver al home
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Formularios 1-->
+<div class="modal fade"
+     id="formularios"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 50%"
+                             aria-valuenow="50"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 1 de 2</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Formulario de Contacto
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    Selecciona tu tipo de consulta
+                </p>
+                <!-- Form -->
+                <div class="row justify-content-end">
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Cobranzas</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Prendas o alzamientos</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Autoplan</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Cuponeras</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Seguros</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">PAC</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Reclamos</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Requisitos para un crédito</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Solicitud nuevo crédito</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0">Otras consultas</p>
+                            <input type="radio" name="unique" id="" />
+                        </label>
+                    </div>
+                    <!-- Button-Avanzar -->
+                    <div class="col-sm-6 col-12 my-2">
+                        <button type="button"
+                                data-bs-target="#formularios2"
+                                data-bs-toggle="modal"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase">
+                            Avanzar
+                            <img class="mx-3" src="~/img/icons/white-arrow.png" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer border-0 p-4"></div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Formularios 2-->
+<div class="modal fade"
+     id="formularios2"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 100%"
+                             aria-valuenow="50"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 1 de 2</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Formulario de Contacto
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    A continuación completa tus datos:
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <!-- Personal Data -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Selects Button -->
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu Comuna</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Addres -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-12 my-2">
+                        <label for="exampleFormControlTextarea1" class="form-label px-3">Mensaje</label>
+                        <textarea class="form-control border-rad-10 border-0"
+                                  id="exampleFormControlTextarea1"
+                                  rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+                    <div class="col-sm-5 col-12">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#graciasModal"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Gracias -->
+<div class="modal fade"
+     id="graciasModal"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-3 bg-card border-rad-20">
+            <div class="modal-header justify-content-end no-align border-0">
+                <div class="button-container col-2 py-2 d-flex justify-content-end">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold text-center" id="exampleModalLabel">
+                    ¡Gracias por contactarnos!
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3 text-center">
+                    Responderemos tu mensaje lo antes posible
+                </p>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="col-sm-9 col-12">
+                        <button type="button"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            <img class="left-arrow-icon"
+                                 src="~/img/icons/left-white-arrow.svg"
+                                 alt="" />
+                            volver al home
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Certificados -->
+<div class="modal fade"
+     id="certificados"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 25%"
+                             aria-valuenow="25"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 1 de 3</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Solicitar Certificados
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    Selecciona el tipo de certificado
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0 fs-5">Certificado sin deuda</p>
+                            <input type="radio" name="" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0 fs-5">Certificado con deuda</p>
+                            <input type="radio" name="" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0 fs-5">Certificado de prepago</p>
+                            <input type="radio" name="" id="" />
+                        </label>
+                    </div>
+                    <div class="col-md-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0 fs-5">Certificado de alzamiento en trámite</p>
+                            <input type="radio" name="" id="" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+                    <div class="col-sm-6 col-12">
+                        <button type="button"
+                                data-bs-target="#certificados2"
+                                data-bs-toggle="modal"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            Avanzar
+                            <img class="mx-3" src="~/img/icons/white-arrow.png" alt="" />
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Certificados 2-->
+<div class="modal fade"
+     id="certificadosx"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 100%"
+                             aria-valuenow="50"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 1 de 2</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Solicitar Certificados
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    A continuación completa tus datos:
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <!-- Personal Data -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Apellido*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">RUT*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">E-mail*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Selects Button -->
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu Comuna</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Address -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Direccion*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Telefono Movil*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Adjuntar -->
+                    <div class="col-12 my-2">
+                        <div class="col-12 d-flex position-relative">
+                            <div class="col-8 pe-3">
+                                <input id="uploadText"
+                                       type="text"
+                                       class="form-control w-100 border-0 input-text border-rad-10 p-3"
+                                       id="exampleFormControlInput1"
+                                       placeholder="cedula.jpg" />
+                            </div>
+                            <div class="col-4">
+                                <button id="btnFile"
+                                        class="btn-grey bg-upload text-white w-100 d-block border-0 p-2 border-rad-10">
+                                    <span class="only-desktop">Adjuntar archivo </span>
+                                    <img src="~/img/icons/clip.png" />
+                                </button>
+                            </div>
+                            <input class="file" type="file" name="" id="file" />
+                        </div>
+                    </div>
+                    <!-- Operaciones -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Numero de operacion*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Patenete asociada*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="col-12 my-2">
+                        <label for="exampleFormControlTextarea1" class="form-label px-3">Mensaje</label>
+                        <textarea class="form-control border-rad-10 border-0"
+                                  id="exampleFormControlTextarea1"
+                                  rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-sm-end justify-content-center">
+                    <div class="col-sm-5 col-12">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#graciasModal"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Certificados 3- Prepago-->
+<div class="modal fade"
+     id="certificados2"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 50%"
+                             aria-valuenow="50"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 2 de 3</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Solicitar Certificado Prepago
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    A continuación completa tus datos:
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <div class="col-md-12 my-2">
+                        <label class="input-tab d-flex align-items-center p-3 justify-content-between">
+                            <p class="mb-0 fs-5">Certificado sin deuda</p>
+                            <input type="radio" name="" id="" />
+                        </label>
+                    </div>
+                </div>
+                <div class="row align-items-center my-3">
+                    <div class="col-md-6 col-12">
+                        <p class="fs-5 mb-0">
+                            Para continuar la solicitud descarga el formulario, complétalo y
+                            adjúntalo más abajo
+                        </p>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="~/img/icons/red-down-button.svg" alt="" />
+                            <a href="" class="text-uppercase fs-5 text-red mx-2 fw-bold">descargar formulario</a>
+                        </div>
+                    </div>
+                    <!-- Adjuntar -->
+                    <div class="col-12 my-2">
+                        <div class="col-12 d-flex position-relative">
+                            <div class="col-8 pe-3">
+                                <input id="uploadText"
+                                       type="text"
+                                       class="form-control w-100 border-0 input-text border-rad-10 p-3"
+                                       id="exampleFormControlInput1"
+                                       placeholder="cedula.jpg" />
+                            </div>
+                            <div class="col-4">
+                                <button id="btnFile"
+                                        class="btn-grey bg-upload text-white w-100 d-block border-0 p-2 border-rad-10">
+                                    <span class="only-desktop">Adjuntar archivo </span>
+                                    <img src="~/img/icons/clip.png" />
+                                </button>
+                            </div>
+                            <input class="file" type="file" name="" id="file" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex">
+                    <div class="col-sm-6 col-12 px-2">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#graciasModal"
+                                class="w-100 btn btn-outline-danger standard-btn border-red hover-red inverse text-uppercase adjust-btn">
+                            <img class="mx-2" src="~/img/icons/left-arrow.png" alt="" />
+                            volver
+                        </button>
+                    </div>
+                    <div class="col-sm-6 col-12 px-2">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#certificados4"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            avanzar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal-Certificados 4- Prepago-->
+<div class="modal fade"
+     id="certificados4"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel2"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-5 bg-card border-rad-20">
+            <div class="modal-header no-align border-0">
+                <!-- Progress Bar -->
+                <div class="progress-container p-2 col-11">
+                    <div class="progress">
+                        <div class="progress-bar"
+                             role="progressbar"
+                             aria-label="Basic example"
+                             style="width: 100%"
+                             aria-valuenow="100"
+                             aria-valuemin="0"
+                             aria-valuemax="100"></div>
+                    </div>
+                    <p class="card-subtitle py-3">Paso 3 de 3</p>
+                </div>
+                <div class="button-container col-1 py-2 px-4">
+                    <button type="button"
+                            class="btn-close p-0"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="modal-body pt-0 px-4">
+                <h3 class="modal-title fs-2 fw-bold" id="exampleModalLabel">
+                    Solicitar Certificado Prepago
+                </h3>
+                <p class="card-subtitle fs-5 fw-bold py-3">
+                    A continuación completa tus datos:
+                </p>
+                <!-- Form -->
+                <div class="row">
+                    <!-- Personal Data -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Nombre*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Apellido*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">RUT*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">E-mail*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Selects Button -->
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <p class="mb-0 px-3">Nombre*</p>
+                        <label class="input-tab align-items-center justify-content-between w-100">
+                            <select class="form-select border-0 p-3 input-select border-rad-10"
+                                    aria-label="Default select example">
+                                <option selected value="">Selecciona tu Comuna</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                                <option value="">Selecciona tu región</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- Address -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Direccion*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Telefono Movil*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Adjuntar -->
+                    <div class="col-12 my-2">
+                        <div class="col-12 d-flex position-relative">
+                            <div class="col-8 pe-3">
+                                <input id="uploadText"
+                                       type="text"
+                                       class="form-control w-100 border-0 input-text border-rad-10 p-3"
+                                       id="exampleFormControlInput1"
+                                       placeholder="cedula.jpg" />
+                            </div>
+                            <div class="col-4">
+                                <button id="btnFile"
+                                        class="btn-grey bg-upload text-white w-100 d-block border-0 p-2 border-rad-10">
+                                    <span class="only-desktop">Adjuntar archivo </span>
+                                    <img src="~/img/icons/clip.png" />
+                                </button>
+                            </div>
+                            <input class="file" type="file" name="" id="file" />
+                        </div>
+                    </div>
+                    <!-- Operaciones -->
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Numero de operacion*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-12 my-2">
+                        <div class="align-items-center justify-content-between w-100">
+                            <label for="exampleFormControlInput1" class="form-label mb-0 px-3">Patenete asociada*</label>
+                            <input type="text"
+                                   class="form-control w-100 border-0 p-3 input-text border-rad-10"
+                                   id="exampleFormControlInput1"
+                                   placeholder="Pedro" />
+                        </div>
+                    </div>
+                    <!-- Mensaje -->
+                    <div class="col-12 my-2">
+                        <label for="exampleFormControlTextarea1" class="form-label px-3">Mensaje</label>
+                        <textarea class="form-control border-rad-10 border-0"
+                                  id="exampleFormControlTextarea1"
+                                  rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer border-0 p-4">
+                <div class="w-100 d-flex justify-content-end">
+                    <div class="col-sm-6 col-12 px-2">
+                        <button type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#graciasModal"
+                                class="w-100 btn btn-danger bg-red standard-btn border-red hover-normal inverse text-uppercase d-block adjust-btn">
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

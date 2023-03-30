@@ -1,0 +1,154 @@
+﻿@model MarubeniCreditWeb.Models.InicioModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <main class="container-fluid p-0">
+        <!-- SLIDER -->
+        <section class="p-0  main-slider wow animate__fadeIn mb-md-0 mb-5">
+            <div class="swiper-container white-move " data-slider-options='{ "loop": true, "slidesPerView": "1", "allowTouchMove":true, "autoplay": false, "keyboard": { "enabled": true, "onlyInViewport": true }, "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" }, "pagination": { "el": ".swiper-pagination-01", "clickable": true } }'>
+                <div class="swiper-wrapper">
+                    <!-- Slider ítem -->
+                    @foreach (var carrete in Model.lstCarrete)
+                    {
+                        <div class="swiper-slide p-md-5 p-0">
+                            <div class="swiper-slide-inner row m-0 p-md-5 p-0 swiper-c justify-content-center">
+                                @*<div class="col-md-6 col-12 d-flex align-items-center bg-card rounded-left swiper-content ">
+                                    <div class="px-md-5 p-0 py-4 col-md-10">
+                                        <h2 class="title-slider text-gray font-32 font-20 mb-md-5 mb-0 fw-bold text-sm-start text-center">
+                                            @carrete.texto
+                                        </h2>
+                                        <button type="button" onclick="@carrete.url" class="btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase ">@carrete.btnTexto <img class="mx-2" src="~/img/icons/white-arrow.png" alt=""> </button>
+                                    </div>
+                                </div>*@
+                                <div class="col-md-12 col-12 swiper-img-container p-0">
+                                    <img class="rounded-right p-0" src="~/img/imgs/@carrete.imagen" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!-- end Slider ítem -->
+
+                </div>
+                <!-- start slider pagination -->
+                <div class="swiper-pagination  swiper-pagination-01 swiper-pagination-bullets swiper-pagination-white text-start"></div>
+                <!-- end slider pagination -->
+                <!-- start slider navigation -->
+                <div class="swiper-button-next"><img src="~/img/icons/red-arrrow.png" alt=""></div>
+                <div class="swiper-button-prev"><img src="~/img/icons/left-arrow.png" alt=""></div>
+                <!-- end slider navigation -->
+            </div>
+        </section>
+        <!-- PAGA-TU-CUOTA-MOBILE-->
+        <!--<section class="only-mobile ">
+            <div class="container-fluid d-flex justify-content-md-start justify-content-center">
+                <div class="col-sm-10 col-11 py-m-5 py-0 px-md-4 px-0 mt-md-5 mt-3">
+                    <div class="finance-card grey d-flex flex-wrap justify-content-center">
+                        <div class="col-md-6 col-lg-7 col-12 p-sm-4">
+                            <div class="finance-content p-4 px-md-5">
+                                <h2 class="mb-0 font-20 text-gray">@Model.pagoOnline.titulo</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 col-12 p-sm-4">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                <button type="button" onclick="location.href='@Model.pagoOnline.url'"  class="btn btn-danger bg-red standard-btn border-red hover-normal inverse  text-uppercase col-md-6 col-lg-7 col-10">paga tu cuota<img class="mx-2" src="~/img/icons/white-arrow.png" alt="">@Model.pagoOnline.btnTexto</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!-- QUIENES SOMOS -->
+        <section class="p-md-0 mt-5">
+            <div class="container-fluid">
+                <div class="main-content p-md-5 p-0 d-flex justify-content-center px-5">
+                    <div class="col-md-9 col-sm-10 col-12">
+                        <div class="px-md-5 p-0 d-flex flex-column align-items-center">
+                            <h2 class="text-gray  my-3">@Model.textoDestacado.titulo</h2>
+                            <p class="mb-0 text-center text-white-space">@Model.textoDestacado.texto</p>
+                            <button type="button"  onclick="location.href='@Url.Action(Model.textoDestacado.urlAction, Model.textoDestacado.urlController)'"  class="btn  btn-outline-danger standard-btn border-red hover-red  text-uppercase mt-3 px-5 fs-3 mt-5 col-xl-2 col-lg-3 col-md-4 col-sm-5 col-10">@Model.textoDestacado.btnTexto</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONOCE LOS PROGRAMAS -->
+        <section class="p-md-0 mt-5" id="tipos-de-creditos">
+            <div class="container-fluid">
+                <h2 class="text-gray text-center my-5">Conoce los Programas de Financiamiento</h2>
+                <div class="col-12">
+                    <div class="cards-container p-0 d-flex flex-wrap justify-content-lg-center justify-content-md-start">
+
+                        @foreach (var financ in Model.lstFinanciamiento)
+                        {
+                            <div class="card col-lg-4 col-sm-6 col-12 px-4 mb-4">
+                                <img src="~/img/imgs/@financ.imagen" class="card-img-top" alt="...">
+                                <div class="card-body d-flex flex-column align-items-center">
+                                    <h3 class="card-title text-red fw-bold">@financ.titulo</h3>
+                                    <p class="card-text">@financ.texto </p>
+                                    <a href="@Url.Action(financ.urlAction, financ.urlController)" class="btn btn-danger bg-red standard-btn border-red hover-red inverse  text-uppercase col-10">@financ.btnTexto</a>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FINANCIAMIENTO-->
+        @*<section>
+            <div class="container-fluid">
+                <div class="col-12 p-md-5 p-0 px-4 my-4">
+                    <div class="finance-card d-flex flex-wrap justify-content-center py-5">
+                        <div class="col-md-6 col-lg-7 col-12">
+                            <div class="finance-content p-4 px-md-5 px-3">
+                                <h2 class="mb-0 font-20 text-md-start text-center text-gray py-3">@Model.simulaFinanciamiento.titulo</h2>
+                                <p class="mb-0 text-gray py-2 fs-3">@Model.simulaFinanciamiento.texto</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-5 col-12">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                <button type="button" onclick="@Model.simulaFinanciamiento.url" class="btn  btn-outline-danger standard-btn border-red hover-red  text-uppercase mt-3 px-5 fs-3 col-md-9 col-sm-7 col-10">@Model.simulaFinanciamiento.btnTexto</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>*@
+        <!-- BANNER -->
+        <section class="only-desktop">
+            <div class="container-fluid">
+                <div class="col-12 p-md-5 p-0 px-4 pt-0">
+                    <div class="finance-card d-flex flex-wrap justify-content-center">
+                        <img class="img-fluid" src="~/img/imgs/BannER.jpg" alt="">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- PAGAR ONLINE-->
+        <section>
+            <div class="container-fluid">
+                <div class="col-12 p-md-5 p-0 px-4 pt-0">
+                    <div class="finance-card red d-flex flex-wrap justify-content-center py-3">
+                        <div class="col-md-6 col-12">
+                            <div class="finance-content p-5">
+                                <h2 class="mb-0 font-20 text-md-start text-center text-white py-3">@Model.pagoOnline.titulo</h2>
+                                <p class="mb-0 text-white py-2 fs-3 only-desktop">@Model.pagoOnline.texto</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="d-flex justify-content-center align-items-center h-100">
+                                @*Descomentar*@
+                                <button type="button" onclick="location.href='@Model.pagoOnline.url'" class="btn  btn-light bg-white standard-btn border-red hover-red  text-uppercase mt-3 px-5 fs-3 text-dark col-md-6 col-sm-7 col-10">@Model.pagoOnline.btnTexto</button>
+                                @* <button type="button"  class="btn  btn-light bg-white standard-btn border-red hover-red  text-uppercase mt-3 px-5 fs-3 text-dark col-md-6 col-sm-7 col-10">@Model.pagoOnline.btnTexto</button>*@
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>

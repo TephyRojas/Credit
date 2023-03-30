@@ -1,0 +1,145 @@
+﻿@model MarubeniCreditWeb.Models.NavBarModel
+@using MarubeniCreditWeb.Data.Package.Comun;
+@{
+    string tituloDropDown = "";
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-red px-3 py-2" aria-label="Fourth navbar example">
+    <div class="container-fluid">
+        <a href="@Url.Action("Index", "Home")" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <img src="~/img/imgs/logo-marubeni.svg" alt="">
+        </a>
+        <button class="navbar-toggler  " type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <img src="~/img/icons/burger-menu.png" alt="">
+        </button>
+        <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarsExample04">
+            <ul class="navbar-nav align-items-md-center align-items-start menu-desktop">
+
+                @foreach (var menu in Model.lstMenu)
+                {
+                    if (menu.idTipoMenu == (int)Objeto.TipoMenu.texto)
+                    {
+                        <li class="nav-item px-md-3 px-0 py-md-0 py-3">
+                            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.url)
+                            {
+                                <a class="nav-link p-0 " aria-current="page" href="@menu.url">@menu.titulo</a>
+                            }
+                            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.urlVista)
+                            {
+                                <a class="nav-link p-0 " aria-current="page" href="@Url.Action(menu.urlAction, menu.urlController)">@menu.titulo</a>
+                            }
+
+                        </li>
+                    }
+
+                    if (menu.idTipoMenu == (int)Objeto.TipoMenu.listaDespegable)
+                    {
+
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">@menu.titulo</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                @foreach (var submenu in Model.lstSubMenu.Where(c => c.tituloMenu == menu.titulo))
+                                {
+                                    <li><a class="dropdown-item" href="@Url.Action(submenu.urlAction, submenu.urlController)">@submenu.tituloSubMenu</a></li>
+
+                                }
+                            </ul>
+                        </li>
+                    }
+                }
+
+                @*<li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn inverse order-1 text-uppercase">
+                    <a class="nav-link p-0" aria-current="page" href="@Url.Action(Model.btnSecundario.urlAction, Model.btnSecundario.urlController)">@Model.btnSecundario.titulo</a>
+                </li>*@
+
+
+                <li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn order-2 text-uppercase">
+                    <a class="nav-link p-0 " aria-current="page" href="@Model.btnPrimario.url" target="_blank">@Model.btnPrimario.titulo</a>
+                </li>
+
+
+
+
+
+
+            </ul>
+            <ul class="navbar-nav align-items-md-center align-items-start  menu-mobile">
+
+                <li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn order-1 text-uppercase">
+                    <a class="nav-link p-0 " aria-current="page" href="@Model.btnPrimario.url" target="_blank">@Model.btnPrimario.titulo</a>
+                </li>
+
+
+                @*<li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn inverse order-2 text-uppercase">
+                    <a class="nav-link p-0" aria-current="page" href="@Url.Action(Model.btnSecundario.urlAction, Model.btnSecundario.urlController)">@Model.btnSecundario.titulo</a>
+                </li>*@
+
+
+                @foreach (var menu in Model.lstMenuMobile)
+                {
+
+                    if (menu.idTipoMenu == (int)Objeto.TipoMenu.texto)
+                    {
+                        <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-@menu.orden">
+                            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.url)
+                            {
+                                <a class="nav-link p-0 " aria-current="page" href="@menu.url">@menu.titulo</a>
+                            }
+                            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.urlVista)
+                            {
+                                <a class="nav-link p-0 " aria-current="page" href="@Url.Action(menu.urlAction, menu.urlController)">@menu.titulo</a>
+                            }
+                            @if (menu.idTipoUrl == (int)Objeto.TipoUrl.modal)
+                            {
+                                <a class="nav-link p-0 " aria-current="page" onclick="MostrarFormActDatos()">@menu.titulo</a>
+                            }
+
+                        </li>
+                    }
+
+                    if (menu.idTipoMenu == (int)Objeto.TipoMenu.listaDespegable)
+                    {
+
+                        <li class="nav-item dropdown order-@menu.orden">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">@menu.titulo</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown04">
+                                @foreach (var submenu in Model.lstSubMenu.Where(c => c.tituloMenu == menu.titulo))
+                                {
+                                    <li><a class="dropdown-item" href="@Url.Action(submenu.urlAction, submenu.urlController)">@submenu.tituloSubMenu</a></li>
+
+                                }
+                            </ul>
+                        </li>
+                    }
+                }
+
+
+
+                @*<li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn order-1">
+                        <a class="nav-link p-0 " aria-current="page" href="#">PAGA TU CUOTA</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 header-btn inverse order-2">
+                        <a class="nav-link p-0" aria-current="page" href="#">SIMULA AQUI</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3">
+                        <a class="nav-link p-0 active" aria-current="page" href="#">Lugares de Pago</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3">
+                        <a class="nav-link p-0 " aria-current="page" href="#">Nuestra empresa</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3">
+                        <a class="nav-link p-0 " aria-current="page" href="#">Tipos de créditos</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3">
+                        <a class="nav-link p-0 " aria-current="page" href="#">Actualiza tus Datos</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3">
+                        <a class="nav-link p-0 " aria-current="page" href="#">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item px-md-3 px-0 py-md-0 py-3 order-3 ">
+                        <a class="nav-link p-0 " aria-current="page" href="#">Servicio al cliente</a>
+                    </li>*@
+            </ul>
+        </div>
+    </div>
+</nav>
